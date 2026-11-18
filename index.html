@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KI-Anleitung – Bentoguru</title><meta name="description" content="Vollständige Anleitung für KI-Assistenten zum Erstellen editierbarer Bentoguru-Projekte als .bento-Datei oder Direktlink.">
+<link rel="canonical" href="https://www.bentoguru.com/ki-anleitung.html">
+<style>:root{color-scheme:light dark}*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#26333b;font:17px/1.65 system-ui,sans-serif}main{max-width:960px;margin:auto;padding:36px 24px 80px}a{color:#325367}h1{font-size:clamp(28px,5vw,42px);line-height:1.2}h2{margin-top:2em;line-height:1.3}pre{overflow:auto;padding:20px;border-radius:12px;background:#e8ecee;font-size:14px}code{font-family:ui-monospace,monospace;overflow-wrap:anywhere}pre code{overflow-wrap:normal}blockquote{margin:24px 0;padding:16px 20px;border-left:4px solid #325367;background:#e8ecee}li{margin:8px 0}@media(prefers-color-scheme:dark){body{background:#1b212c;color:#ffecd9}a{color:#bfd8e5}pre,blockquote{background:#282f3b}}</style>
+</head><body><main><nav><a href="https://www.bentoguru.com/">Bentoguru öffnen</a> · <a href="/ki-anleitung.txt" download>Textfassung herunterladen</a></nav>
+<h1>Editierbare Bentoguru-Projekte ohne Connector erstellen</h1>
+<p><strong>Prompt zum Kopieren</strong></p>
+<blockquote>Lies die BentoGuru-Anleitung. Beginne bei Gemini mit HTML (https://bento-guru.b-cdn.net/ki-anleitung.html), sonst mit TXT (https://bento-guru.b-cdn.net/ki-anleitung.txt). Falls du die Anleitung dort nicht lesen kannst, versuche die andere Fassung. Gestalte [mein Thema, Inhalt und gewünschtes Format]. Gib mir das Projekt als .bento-Datei oder als anklickbaren Direktlink, wie gewünscht. Falls ich Dateien oder Bildlinks mitgebe, verwende sie nach Möglichkeit. Wähle die Gestaltung passend zu meiner Idee.</blockquote>
+<h2>Ergebnis</h2>
+<p>Gestalte nach dem Auftrag. Texte bleiben editierbar. Für Typografie, grafische Kompositionen und Pixel Art reichen Text- und Farbkacheln. Baue Pixelmotive direkt aus farbigen Rasterzellen. Wenn der Nutzer später eigene Bilder einsetzen möchte, plane dafür leere Bildkacheln ein. Gibt er Dateien oder direkte Bildlinks mit, verwende sie nach Möglichkeit an der gewünschten Stelle. Wünscht er Bildideen, kannst du passende Bilder generieren oder geeignete Fotos etwa auf Unsplash oder Pexels suchen. Beachte die Nutzungsbedingungen und erforderliche Bildnachweise. Verwende echte, verfügbare Motive und gib jedem separat bearbeitbaren Foto eine eigene Kachel.</p>
+<ul>
+<li><strong>.bento-Datei:</strong> Verwende die Dateiwerkzeuge deines Chats. Schreibe das Projektobjekt direkt als UTF-8-JSON in eine Datei mit der Endung <code>.bento</code> und stelle diese als Download bereit. Dieses Format unterstützt auch eingebettete Bilder. Der Benutzer öffnet die Datei über «Projekt öffnen» oder zieht sie auf den Canvas.</li>
+<li><strong>Direktlink:</strong> Kodiere das Projekt wie im Python-Beispiel unten und gib den vollständigen, anklickbaren Link mit <code>https://www.bentoguru.com/#template=GZ1-</code> aus. Ein rein grafischer Entwurf benötigt keine Bildquelle. Für verlinkte Fotos speichere die direkte öffentliche HTTPS-Bildadresse in <code>sourceUrl</code> und lasse <code>src</code> leer. Beim Öffnen lädt der Browser die verlinkten Kachel- und Hintergrundbilder automatisch. Für lokale oder generierte Fotos ohne öffentliche URL kannst du im Direktlink Bildkacheln zum späteren Befüllen vorsehen. Wenn der Nutzer die Bilder gleich mitgeliefert möchte, kannst du sie in eine .bento-Datei einbetten.</li>
+</ul>
+<p>Unten steht ein vollständiges, importierbares Beispiel. Übernimm die Projektstruktur, ersetze Mustertexte, Farben, Kacheln und Positionen passend zum Auftrag. Dateiformat und Werkzeugparameter des MCP-Connectors unterscheiden sich.</p>
+<pre><code>{
+  &quot;version&quot;: 2, &quot;gridVersion&quot;: 1, &quot;name&quot;: &quot;Waldnotizen&quot;,
+  &quot;width&quot;: 1200, &quot;height&quot;: 1200, &quot;unit&quot;: &quot;px&quot;, &quot;cols&quot;: 4,
+  &quot;gap&quot;: 20, &quot;radius&quot;: 32, &quot;organic&quot;: true, &quot;compact&quot;: false,
+  &quot;background&quot;: &quot;#f1ead5&quot;, &quot;gradient&quot;: false, &quot;color2&quot;: &quot;#e3b05e&quot;, &quot;angle&quot;: 135,
+  &quot;shadow&quot;: false, &quot;shadowColor&quot;: &quot;#19271f&quot;, &quot;shadowOpacity&quot;: 20,
+  &quot;shadowAngle&quot;: 145, &quot;shadowDistance&quot;: 8, &quot;shadowBlur&quot;: 16,
+  &quot;tiles&quot;: [
+    {&quot;id&quot;:&quot;titel&quot;,&quot;type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;Waldnotizen&quot;,&quot;color&quot;:&quot;#fff1d3&quot;,&quot;backgroundColor&quot;:&quot;#294f40&quot;,&quot;fontFamily&quot;:&quot;Georgia&quot;,&quot;fontSize&quot;:128,&quot;textAlign&quot;:&quot;left&quot;,&quot;verticalAlign&quot;:&quot;bottom&quot;,&quot;textPadding&quot;:38},
+    {&quot;id&quot;:&quot;nummer&quot;,&quot;type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;Heft 01&quot;,&quot;color&quot;:&quot;#30271b&quot;,&quot;backgroundColor&quot;:&quot;#ecb96b&quot;,&quot;fontSize&quot;:64},
+    {&quot;id&quot;:&quot;akzent&quot;,&quot;type&quot;:&quot;placeholder&quot;,&quot;backgroundColor&quot;:&quot;#bd6746&quot;}
+  ],
+  &quot;layout&quot;: [
+    {&quot;i&quot;:&quot;titel&quot;,&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:4,&quot;h&quot;:3},
+    {&quot;i&quot;:&quot;nummer&quot;,&quot;x&quot;:0,&quot;y&quot;:3,&quot;w&quot;:3,&quot;h&quot;:1},
+    {&quot;i&quot;:&quot;akzent&quot;,&quot;x&quot;:3,&quot;y&quot;:3,&quot;w&quot;:1,&quot;h&quot;:1}
+  ]
+}</code></pre>
+<h2>Format und Anordnung</h2>
+<ul>
+<li>Speichere Breite und Höhe immer als ganze Pixel. Für A4 hochkant bei 300 dpi sind es 2480 × 3508 mit Anzeigeeinheit <code>&quot;mm&quot;</code>. Für Druckdokumente Platz für Seitenränder vorsehen. Für Pixelprojekte jede Seite 128–8192 px, höchstens 32 Millionen Pixel.</li>
+<li>Mit <code>gridVersion:1</code> zählt <code>cols</code> die kurze Seite. Erlaubt sind 4, 5, 8, 9, 16, 17, 24 und 25. Die lange Seite hat entsprechend dem Seitenverhältnis gerundet mehr Zellen (höchstens 256). Bei 1200 × 630 und <code>cols:4</code> ergibt das 8 Spalten × 4 Reihen.</li>
+<li>Eindeutige Kachel-IDs. Jede sichtbare Kachel benötigt einen Layout-Eintrag mit derselben ID unter <code>i</code>. Koordinaten starten oben links bei 0. Breite und Höhe sind positive ganze Zellzahlen. Rechtecke müssen ins Raster passen und dürfen sich nicht überlappen. Kacheln ohne Position liegen in der Reserve.</li>
+<li>Höchstens 625 Kacheln, davon höchstens 80 vom Typ <code>image</code> oder <code>imageText</code>. Maximaler Abstand <code>gap</code> in px: 0,6 × Minimum aus Breite/(Spalten+1) und Höhe/(Reihen+1).</li>
+<li><code>background</code> ist der Canvas-Hintergrund. Für Verlauf <code>gradient:true</code>, zweite Farbe <code>color2</code> und Winkel <code>angle</code> (0–360). <code>radius</code> bestimmt die Ecken in px, <code>organic</code> die optische Rundung. Die Schatteneinstellungen aus dem Beispiel gelten projektweit. Farben als sechsstellige Hexwerte angeben, für durchscheinende Flächen ist auch <code>&quot;transparent&quot;</code> möglich.</li>
+</ul>
+<h2>Druckränder und Beschnitt</h2>
+<p>Plane bei jedem Druckformat den Seitenrand passend zum Auftrag. Für Rechnungen, Briefe und andere Dokumente eignet sich ein gleichmässiger weisser Rand, bei A4 beispielsweise 10–15 mm. Halte Texte, Tabellen und Logos innerhalb dieser Fläche.</p>
+<p>Bei randfüllenden Motiven reichen Hintergrundfarbe oder Hintergrundfoto bis an alle gewünschten Seitenkanten. Wichtige Texte und Logos bleiben mindestens 5 mm innerhalb der Schnittkante. Weise bei der Übergabe auf die Option für 3 mm Beschnitt im JPG-Export hin. Der Editor ergänzt den Beschnitt ausserhalb des Endformats. Alle Kacheln bleiben innerhalb des Rasters. Vermeide schmale, unbeabsichtigte Streifen an der Seitenkante.</p>
+<p>Verwende für Druckprojekte <code>unit:&quot;mm&quot;</code> oder <code>unit:&quot;in&quot;</code>, damit die Druckoption im Export erscheint. Die gespeicherten Werte <code>width</code> und <code>height</code> bleiben Pixel bei 300 dpi. Ein Millimeter entspricht etwa 11,81 Pixeln. Beispielsweise ergeben 13 mm Sicherheitsabstand etwa 154 Pixel. Ein Vorlagenlink oder eine .bento-Datei enthält den editierbaren Entwurf; der Beschnitt entsteht beim anschliessenden Bildexport.</p>
+<h2>Kacheln gestalten</h2>
+<ul>
+<li><strong>Farbfläche:</strong> <code>type:&quot;placeholder&quot;</code>, sichtbare Farbe in <code>backgroundColor</code>. <strong>Text:</strong> <code>type:&quot;text&quot;</code>, Inhalt in <code>text</code>, Schriftfarbe in <code>color</code>. <strong>Bild:</strong> <code>type:&quot;image&quot;</code>. <strong>Bild mit editierbarem Text:</strong> <code>type:&quot;imageText&quot;</code>. Jede Kachel kann mit <code>locked:true</code> gesperrt werden.</li>
+<li><strong>Textsatz:</strong> <code>textAlign</code> = left/center/right, <code>verticalAlign</code> = top/center/bottom. <code>fontSize</code> 8–300 px ist die Obergrenze, <code>fontWeight</code> 100–1000, <code>textPadding</code> 0–300 px pro Seite, <code>lineHeight</code> 0.8–3. Der Editor verkleinert den Text, bis er passt. Plane für lange Texte ausreichend Fläche ein.</li>
+<li><strong>Schriftarten:</strong> Arial, Times New Roman, Courier New, Georgia, Verdana, Tahoma, Trebuchet MS, Impact, Roboto, Open Sans, Lato, Montserrat, Oswald, Raleway, Poppins, Nunito, Merriweather, Inter, Playfair Display, Quicksand, Source Sans Pro, Work Sans, Rubik, Fira Sans, Cabin, Muli, Bebas Neue, PT Sans, Josefin Sans, Ubuntu, Kanit, Barlow, Mukta, Archivo, Manrope, Heebo, Signika, Comic Neue, Indie Flower, Permanent Marker, Pacifico, Amatic SC, Shadows Into Light, Caveat, Architects Daughter, Dancing Script, Lobster, Abril Fatface, Great Vibes, Orbitron, Share Tech Mono, VT323, Major Mono Display, Bungee, Monoton, Audiowide.</li>
+<li><strong>Einzelne Wörter:</strong> Beispiel für „Heft 01“: <code>&quot;textRuns&quot;:[{&quot;start&quot;:5,&quot;end&quot;:7,&quot;weight&quot;:700,&quot;scale&quot;:1.2,&quot;color&quot;:&quot;#603123&quot;,&quot;fontFamily&quot;:&quot;Georgia&quot;}]</code>. Geordnete, überlappungsfreie Bereiche in UTF-16, Ende exklusiv. Relative Grösse <code>scale</code> 0.1–4 (10–400 %). Im Bereich heisst die Stärke <code>weight</code>.</li>
+<li><strong>Texthinterlegung</strong> für die Kachel oder einen einzelnen Textbereich: <code>textBackdrop:true</code>, <code>textBackdropColor</code>, Höhe <code>textBackdropStrength</code> 10–200 %, <code>textBackdropOpacity</code> 0–100 %, <code>textBackdropPadding</code> und <code>textBackdropRadius</code> jeweils 0–150 px.</li>
+<li><strong>Kontur</strong> projektweit oder individuell pro Kachel: <code>&quot;contour&quot;:{&quot;enabled&quot;:true,&quot;automatic&quot;:false,&quot;color&quot;:&quot;#325367&quot;,&quot;width&quot;:3,&quot;opacity&quot;:85}</code>. Breite 0–100 px, Deckkraft 0–100 %. Individuelle Konturen haben Vorrang.</li>
+<li><strong>Bilddaten:</strong> Verwende echte Bilddateien. Setze <code>src</code> auf eine Data-URL mit korrektem MIME-Typ und Base64-Inhalt (PNG, JPEG, WebP, GIF oder AVIF), <code>name</code> auf den Bildnamen. Python-Beispiel für ein JPEG: <code>&quot;data:image/jpeg;base64,&quot; + base64.b64encode(Path(&quot;foto.jpg&quot;).read_bytes()).decode(&quot;ascii&quot;)</code>. Mehrere Motive als getrennte Bildkacheln einbauen. Wenn ein Bild fehlt, kennzeichne einen Platzhalter.</li>
+<li><strong>Bildausschnitt und Wirkung:</strong> <code>zoom:1</code> entspricht 100 %, für PNGs bis 0.05 verkleinerbar, maximal 5. <code>cropX</code> und <code>cropY</code> reichen von 0 bis 1 (Mitte 0.5), <code>imageRotation</code> 0–360 Grad, <code>imageTone</code> −100 bis +100, <code>imageGrayscale</code> 0–100, <code>imageColorLimit</code> 0 (Original), 16, 8, 4 oder 2. <code>imageBackground:true</code> zeigt die Kachelfarbe hinter transparenten Bildteilen.</li>
+<li><strong>Hintergrundfoto:</strong> Auf Projektebene <code>backgroundImage</code> mit <code>enabled:true</code>, <code>src</code>, <code>name</code> und denselben Ausschnitt- und Wirkungsfeldern setzen. Durch leere Zellen, Kachelabstände und transparente Flächen sichtbar.</li>
+<li><strong>Bestehende Projekte:</strong> Bewahre beim Bearbeiten IDs, Bilder und nicht angeforderte Eigenschaften. Bei Kalendern gehören auch <code>calendar.months</code> (zwölf Monatsinhalte) und gegebenenfalls <code>calendar.designs</code> (individuelle Monatsgestaltungen) zum Projekt. Verwende beim Bearbeiten eines vorhandenen Kalenders dessen Rollen, Monatsstruktur und Kachel-IDs.</li>
+</ul>
+<h2>Ausgabe mit Python</h2>
+<p>Das Beispiel erwartet den fertigen Entwurf als Dictionary <code>project</code>. Für eine Datei kannst du Bilder in <code>src</code> einbetten. Falls du Fotos verlinkst, übernimm ihre öffentlichen HTTPS-Bildadressen einschliesslich der Abfrageparameter. Das Erstellen des Links erfordert keinen Bildabruf. Zum Laden im Editor muss die Bildadresse JPG, PNG oder WebP direkt ausliefern, ohne Anmeldung oder Weiterleitung und mit CORS-Freigabe für den Editor. Es gelten 25 MB und 40 Megapixel je Bild. Bei gesperrtem Browserzugriff kann der Benutzer das Bild als Datei auf der Ablagefläche ablegen. Verwende nur Bilder, die du für deinen Zweck nutzen darfst.</p>
+<pre><code># Optional für den Beispielentwurf oben. Setze nur gewünschte Bildquellen ein.
+tile_photo_url = None
+background_photo_url = None
+if tile_photo_url:
+    project[&quot;tiles&quot;][2].update(type=&quot;image&quot;, src=&quot;&quot;, name=&quot;Foto&quot;, sourceUrl=tile_photo_url)
+if background_photo_url:
+    project[&quot;backgroundImage&quot;] = {&quot;enabled&quot;: True, &quot;src&quot;: &quot;&quot;, &quot;name&quot;: &quot;Hintergrund&quot;, &quot;sourceUrl&quot;: background_photo_url}</code></pre>
+<pre><code>import base64
+import gzip
+import json
+from pathlib import Path
+
+payload = json.dumps(project, ensure_ascii=False, separators=(&quot;,&quot;, &quot;:&quot;), allow_nan=False).encode(&quot;utf-8&quot;)
+Path(&quot;entwurf.bento&quot;).write_bytes(payload)
+
+# Für einen Direktlink mit öffentlichen Bildquellen oder Bildplätzen:
+def contains_image(value):
+    if isinstance(value, dict):
+        return bool(value.get(&quot;src&quot;)) or any(contains_image(v) for v in value.values())
+    return isinstance(value, list) and any(contains_image(v) for v in value)
+
+if not contains_image(project):
+    code = base64.urlsafe_b64encode(gzip.compress(payload)).decode(&quot;ascii&quot;).rstrip(&quot;=&quot;)
+    print(&quot;https://www.bentoguru.com/#template=GZ1-&quot; + code)</code></pre>
+<p>Prüfe vor der Übergabe die IDs, Rastergrenzen, überlappungsfreie Platzierung, Farben, Texte und Bildquellen. Gib den tatsächlich erzeugten Dateianhang oder den vollständig berechneten, anklickbaren Direktlink aus. Wenn du weder Dateien erzeugen noch Code ausführen kannst, sage das offen. Falls die Anleitung nicht per URL abrufbar ist, bitte den Benutzer, sie als Datei anzuhängen.</p>
+<p>Bilddeckkraft: <code>imageOpacity</code> steuert nur die Bildebene von Bildkacheln, Bild-&amp;-Text-Kacheln und <code>backgroundImage</code>: 0 bis 100 Prozent, Standard 100. Text, Kontur und Kachelfarbe bleiben unverändert.</p>
+</main></body></html>
