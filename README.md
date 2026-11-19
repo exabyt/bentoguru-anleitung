@@ -2,7 +2,7 @@
 
 **Prompt zum Kopieren**
 
-> Lies die technische Anleitung unter https://exabyt.github.io/bentoguru-anleitung/. Falls der Abruf scheitert, öffne ki-anleitung.txt im Repository https://github.com/exabyt/bentoguru-anleitung oder direkt unter https://raw.githubusercontent.com/exabyt/bentoguru-anleitung/main/ki-anleitung.txt. Wenn keine Quelle zugänglich ist, bitte mich um die Anleitung. Gestalte [meine Idee] mit den beschriebenen Funktionen und berücksichtige meine Wünsche. Gib mir den editierbaren Entwurf als anklickbaren Direktlink. Falls gewünschte Bilder ohne geeigneten öffentlichen Bildlink mitgeliefert werden müssen, bette sie in eine .bento-Datei ein und stelle diese zum Herunterladen bereit.
+> Wenn dir die vollständige BentoGuru-Anleitung mit dem Projektbeispiel bereits vorliegt, verwende sie direkt. Die drei Links sind alternative Zugänge zur selben Anleitung. Öffne zuerst https://exabyt.github.io/bentoguru-anleitung/. Gehe nur dann zum nächsten Link, wenn die Anleitung fehlt oder unvollständig ist. Der zweite Zugang ist https://github.com/exabyt/bentoguru-anleitung, der dritte ist https://raw.githubusercontent.com/exabyt/bentoguru-anleitung/main/ki-anleitung.txt. Sobald du die vollständige Anleitung lesen kannst, überspringe die übrigen Links. Falls alle drei Versuche scheitern, bitte mich um die Anleitung. Gestalte [meine Idee] mit den beschriebenen Funktionen und berücksichtige meine Wünsche. Gib mir den editierbaren Entwurf als anklickbaren Direktlink. Falls gewünschte Bilder ohne geeigneten öffentlichen Bildlink mitgeliefert werden müssen, bette sie in eine .bento-Datei ein und stelle diese zum Herunterladen bereit.
 
 ## Ergebnis
 
