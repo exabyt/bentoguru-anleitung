@@ -2,7 +2,7 @@
 
 **Prompt zum Kopieren**
 
-> Lies die BentoGuru-Anleitung. Beginne bei Gemini mit HTML (https://bento-guru.b-cdn.net/ki-anleitung.html), sonst mit TXT (https://bento-guru.b-cdn.net/ki-anleitung.txt). Falls du die Anleitung dort nicht lesen kannst, versuche die andere Fassung. Gestalte [mein Thema, Inhalt und gewünschtes Format]. Gib mir das Projekt als .bento-Datei oder als anklickbaren Direktlink, wie gewünscht. Falls ich Dateien oder Bildlinks mitgebe, verwende sie nach Möglichkeit. Wähle die Gestaltung passend zu meiner Idee.
+> Lies die technische Anleitung unter https://exabyt.github.io/bentoguru-anleitung/. Falls der Abruf scheitert, öffne ki-anleitung.txt im Repository https://github.com/exabyt/bentoguru-anleitung oder direkt unter https://raw.githubusercontent.com/exabyt/bentoguru-anleitung/main/ki-anleitung.txt. Wenn keine Quelle zugänglich ist, bitte mich um die Anleitung. Gestalte [meine Idee] mit den beschriebenen Funktionen und berücksichtige meine Wünsche. Gib mir den editierbaren Entwurf als anklickbaren Direktlink. Falls gewünschte Bilder ohne geeigneten öffentlichen Bildlink mitgeliefert werden müssen, bette sie in eine .bento-Datei ein und stelle diese zum Herunterladen bereit.
 
 ## Ergebnis
 
